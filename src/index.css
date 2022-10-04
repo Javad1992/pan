@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl !important;
+  font-family: "IRANSans", serif !important;
+}
+@font-face {
+  font-family: IRANSansBold;
+  font-style: normal;
+  font-weight: bold;
+  src: url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/woff2/IRANSansWeb(FaNum)_Bold.woff2")
+      format("woff2"),
+    url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/woff/IRANSansWeb(FaNum)_Bold.woff")
+      format("woff"),
+    url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/ttf/IRANSansWeb(FaNum)_Bold.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/eot/IRANSansWeb(FaNum).eot");
+  src: url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/eot/IRANSansWeb(FaNum).eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/woff2/IRANSansWeb(FaNum).woff2")
+      format("woff2"),
+    url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/woff/IRANSansWeb(FaNum).woff")
+      format("woff"),
+    url("./assets/fonts/IRANSans/Farsi_numerals/webFonts/fonts/ttf/IRANSansWeb(FaNum).ttf")
+      format("truetype");
+}
+
+.paginate {
+  display: flex;
+  /* justify-content: space-between; */
+}
+p {
+  margin: 0px;
+}
+.paginate li {
+  margin: 0 0.5rem;
+  border: 1px solid gray;
+  padding: 0 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.4s ease-in-out;
+}
+.paginate li:hover {
+  border: 1px solid blue;
+  color: blue;
+}
+.MuiPagination-root {
+  direction: ltr !important;
+}
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border-bottom: none !important;
+}
+.popup-content {
+  padding: 0.5rem 1rem;
+}
+.carousel {
+  width: 300px !important;
+}
+.carousel-control-next-icon {
+  display: none !important;
+}
+.carousel-control-prev-icon {
+  display: none !important;
+}
+
+.default-nav {
+  margin-left: 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default-nav svg {
+  fill: gray;
+}

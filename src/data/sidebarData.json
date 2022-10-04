@@ -1,0 +1,235 @@
+[
+  {
+    "id": "1",
+    "role": "financeManager",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/visit",
+        "display_name": "درخواست بازدید",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "role": "educationManager",
+    "features": [
+      {
+        "id": "2",
+        "route": "/dashboard/app/editquestionnaireList",
+        "display_name": "لیست برنامه غذایی های نگارش شده",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "3",
+        "route": "/dashboard/app/list-request-farmer",
+        "display_name": "درخواست های ثبت نام کارشناسان",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "4",
+        "route": "/dashboard/app/experts",
+        "display_name": "کارشناسان",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "5",
+        "route": "/dashboard/app/farmerList",
+        "display_name": "کشاورزان",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+
+  {
+    "id": "3",
+    "role": "visitSupport",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/visit",
+        "display_name": "درخواست های بازدید",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "role": "dataCollector",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/checklist",
+        "display_name": "بازدیدهای انجام شده",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "2",
+        "route": "/dashboard/app/archive",
+        "display_name": "بازدیدهای بایگانی شده",
+        "icon": "bx bx-package"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "role": "GIS",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/checklist",
+        "display_name": "بازدیدهای انجام شده",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "2",
+        "route": "/dashboard/app/gis",
+        "display_name": "لیست فایل های gis",
+        "icon": "bx bx-package"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "role": "analyst",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/gis",
+        "display_name": "لیست فایل های GIS",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "role": "Qsupport",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/questionnaireList",
+        "display_name": "لیست پرسشنامه ها",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "2",
+        "route": "/dashboard/app/archive",
+        "display_name": "لیست پرسشنامه های بایگانی",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "role": "mealPlanWriter",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/questionnaireList",
+        "display_name": "لیست پرسشنامه ها",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "2",
+        "route": "/dashboard/app/rejectQuestionnaireList",
+        "display_name": "لیست برنامه غذایی های برگشت خورده",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "role": "sale",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/questionnaireList",
+        "display_name": "لیست پرسشنامه ها",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "role": "ExpertSupport",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/list-request-farmer",
+        "display_name": "ثبت نام کارشناسان",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "2",
+        "route": "/dashboard/app/reject-request-farmer",
+        "display_name": "برگشت خورده ها",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "3",
+        "route": "/dashboard/app/archive-request-farmer",
+        "display_name": "بایگانی ها",
+        "icon": "bx bx-category-alt"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "role": "contentSupport",
+    "features": [
+      {
+        "id": "1",
+        "route": "/dashboard/app/manage-page",
+        "display_name": "مدیریت صفحه",
+        "icon": "bx bx-category-alt"
+      },
+      {
+        "id": "2",
+        "route": "",
+        "display_name": "مدیریت وبلاگ",
+        "icon": "bx bx-category-alt",
+        "child": [
+          {
+            "id": "1",
+            "route": "/dashboard/app/content-video",
+            "display_name": "محتوای ویدیویی",
+            "icon": "bx bx-category-alt"
+          },
+          {
+            "id": "2",
+            "route": "/dashboard/app/content-text",
+            "display_name": "محتوای متنی",
+            "icon": "bx bx-category-alt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "role": "sysAdmin",
+    "features": [
+      {
+        "id": "2",
+        "route": "",
+        "display_name": "مدیریت کارمندان",
+        "icon": "bx bx-category-alt",
+        "child": [
+          {
+            "id": "1",
+            "route": "/dashboard/app/employees",
+            "display_name": "مشاهده کارمندان",
+            "icon": "bx bx-category-alt"
+          },
+          {
+            "id": "2",
+            "route": "/dashboard/app/addEmployees",
+            "display_name": "افزودن کارمند",
+            "icon": "bx bx-category-alt"
+          }
+        ]
+      }
+    ]
+  }
+]
