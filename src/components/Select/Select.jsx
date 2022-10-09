@@ -65,6 +65,7 @@ const Label = styled.label`
   line-height: 1.5;
   color: #495057;
   margin-bottom: 0.4rem;
+  font-family:'IRANSans'
 `;
 
 const SelectStyle = styled.select`
@@ -72,9 +73,10 @@ const SelectStyle = styled.select`
   border: 1px solid #c8cccf;
   padding: 0.4rem;
   border-radius: 5px;
-  font-family: "IRAN";
+  font-family: "IRANSans";
   color: #495057;
   outline: none;
+  font-size:12px
 `;
 
 const Option = styled.option``;

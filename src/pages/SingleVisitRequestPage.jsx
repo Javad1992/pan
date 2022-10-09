@@ -29,11 +29,12 @@ import Typography from "../components/Typography/Typography";
 import styled from "styled-components";
 import { Container } from "../globalStyle";
 import Loading from "../components/Loading/Loading";
+import TabsContainer from "./VisitService/Tabs/Tabs";
+import { TabWrapper } from "./VisitService/Tabs/tabStyle";
 
 const SingleVisitRequestPage = () => {
   // declare params
   const { parentId } = useParams();
-  console.log(parentId);
   // declare dispatch
   const dispatch = useDispatch();
   // get single visit request
@@ -50,8 +51,6 @@ const SingleVisitRequestPage = () => {
     isOpenPersonalModal,
   } = statusModal;
 
-  console.log(updatedVisitRequest);
-
   useEffect(() => {
     dispatch(fetchSingleVisitRequest(parentId));
   }, [dispatch]);
@@ -65,6 +64,7 @@ const SingleVisitRequestPage = () => {
       <Typography size="18px" weight="bold">
         جزییات درخواست بازدید{" "}
       </Typography>
+      
       <PersonalInfo>
         <Wrapper>
           <Item>
@@ -77,15 +77,17 @@ const SingleVisitRequestPage = () => {
           </Item>
         </Wrapper>
         <Wrapper>
-          <Item>
-            <Button
-              small
-              color="#51D451"
-              onClick={() => dispatch(openFarmerModal())}
-            >
-              ثبت نام کشاورز
-            </Button>
-          </Item>
+          {!visit[0]?.farmerCode && (
+              <Item>
+              <Button
+                small
+                color="#51D451"
+                onClick={() => dispatch(openFarmerModal())}
+              >
+                استعلام کشاورز
+              </Button>
+            </Item>
+          )}
           <Item>
             <Button
               small
@@ -96,96 +98,13 @@ const SingleVisitRequestPage = () => {
           </Item>
         </Wrapper>
       </PersonalInfo>
-      {visit?.map((item, index) => (
-        <PublicInfo key={index}>
-          <Wrapper>
-            <Item>
-              <Title>نام و نام خانوادگی :</Title>
-              <SubTitle>{item.fullName}</SubTitle>
-            </Item>
-            <Item>
-              <Title>نوع کشت :</Title>
-              <SubTitle>{item.product}</SubTitle>
-            </Item>
-            <Item>
-              <Title>شماره تماس :</Title>
-              <SubTitle>{item.phoneNumber}</SubTitle>
-            </Item>
-            <Item>
-              <Title>مساحت :</Title>
-              <SubTitle>{item.area}</SubTitle>
-            </Item>
-          </Wrapper>
-          <Wrapper>
-            <Item>
-              <Title>کد کشاورزی :</Title>
-              <SubTitle>{item.farmerCode}</SubTitle>
-            </Item>
-            <Item>
-              <Title>آدرس :</Title>
-              <SubTitle>{`${item.province} , ${item.city}  `}</SubTitle>
-            </Item>
-            <Item>
-              <Title>فاصله :</Title>
-              <SubTitle>{item.distance}</SubTitle>
-            </Item>
-            <Item>
-              <Title>قیمت :</Title>
-              <SubTitle>{item.cost}</SubTitle>
-            </Item>
-          </Wrapper>
-          <Wrapper>
-            <Item>
-              <Button small onClick={() => dispatch(openModal(item._id))}>
-                ویرایش
-              </Button>
-            </Item>
-            <Item>
-              <Button
-                small
-                color="#08313A"
-                onClick={() => {
-                  dispatch(sendQuestion(item?.visitCode));
-                }}
-              >
-                ارسال پرسشنامه
-              </Button>
-            </Item>
-            <Item>
-              <Button
-                small
-                color="#da624a"
-                onClick={() => dispatch(openFactorModal(item._id))}
-              >
-                ثبت فاکتور
-              </Button>
-            </Item>
-            <Item>
-              <Button
-                small
-                color="#51D451"
-                onClick={() => {
-                  dispatch(openExpertModal(item._id));
-                  console.log("item?.id", item._id);
-                }}
-              >
-                تعیین کارشناس
-              </Button>
-            </Item>
-            <Item>
-              <Button
-                small
-                color="#F81C0B"
-                onClick={() =>
-                  dispatch(removeVisitRequest(parentId, item?.visitCode))
-                }
-              >
-                حذف
-              </Button>
-            </Item>
-          </Wrapper>
-        </PublicInfo>
-      ))}
+      {visit[0]?.farmerCode ? (
+      <TabWrapper>
+      <TabsContainer visit={visit} />
+      </TabWrapper>
+      ) : (
+        <Typography>برای ادامه پردازش درخواست فرد مورد نظر باید کشاورز باشد .</Typography>
+      )}
       {isOpenPersonalModal && <PersonalVisitEditDialog visitId={parentId} />}
       {isOpenFarmer && <RegisterFarmerDialog />}
       {isOpen && <PublicVisitRequestDialog visitId={parentId} />}
@@ -215,14 +134,13 @@ const Item = styled.div`
   align-items: center;
 `;
 const Title = styled.p`
-  color: ${({ theme }) => theme.text};
-  font-size: 12px;
-  font-weight: bold;
+  color:gray;
+  font-size: 16px;
 `;
 
 const SubTitle = styled.p`
   color: ${({ theme }) => theme.text};
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   margin-right: 0.3rem;
 `;

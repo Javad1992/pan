@@ -21,6 +21,7 @@ const RegisterFarmerDialog = () => {
     province: "",
     city: "",
     zone: "",
+    birthDate:'',
     products: [],
   });
 
@@ -41,7 +42,8 @@ const RegisterFarmerDialog = () => {
   // handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signupFarmer(form));
+    console.log(form)
+    // dispatch(signupFarmer(form));
   };
 
   useEffect(() => {
@@ -69,7 +71,11 @@ const RegisterFarmerDialog = () => {
             </span>
             <Title>ثبت نام کشاورز</Title>
           </ModalHeader>
-          <Form onSubmit={handleSubmit}>
+          <form className="form-control my-4 py-4"
+            onSubmit={handleSubmit}
+          >
+            <div className="row">
+            <div className="col-md-4">
             <InputField
               type="text"
               label="نام و نام خانوادگی"
@@ -77,13 +83,8 @@ const RegisterFarmerDialog = () => {
               onChange={handleChange}
               value={form.fullName}
             />
-            <InputField
-              type="text"
-              label="شماره تماس"
-              name="phoneNumber"
-              onChange={handleChange}
-              value={form.phoneNumber}
-            />
+            </div>
+            <div className="col-md-4">
             <InputField
               type="text"
               label="نام به لاتین"
@@ -91,6 +92,8 @@ const RegisterFarmerDialog = () => {
               onChange={handleChange}
               value={form.eName}
             />
+            </div>
+            <div className="col-md-4">
             <InputField
               type="text"
               label="نام خانوادگی به لاتین"
@@ -98,6 +101,8 @@ const RegisterFarmerDialog = () => {
               onChange={handleChange}
               value={form.eFamilyName}
             />
+            </div>
+            <div className="col-md-4">
             <InputField
               type="text"
               label="شماره ملی"
@@ -105,6 +110,17 @@ const RegisterFarmerDialog = () => {
               onChange={handleChange}
               value={form.nationalCode}
             />
+            </div>
+            <div className="col-md-4">
+            <InputField
+              type="text"
+              label="شماره تماس"
+              name="phoneNumber"
+              onChange={handleChange}
+              value={form.phoneNumber}
+            />
+            </div>
+            <div className="col-md-4">
             <Select
               onChange={(e) => setForm({ ...form, province: e.target.value })}
               name="province"
@@ -112,12 +128,16 @@ const RegisterFarmerDialog = () => {
               items={provinces}
               label="استان"
             />
+            </div>
+            <div className="col-md-4">
             <Select
               onChange={(e) => setForm({ ...form, city: e.target.value })}
               name="city"
               items={sel}
               label="شهرستان"
             />
+            </div>
+            <div className="col-md-4">
             <Select
               onChange={(e) => setForm({ ...form, products: [e.target.value] })}
               name="product"
@@ -125,6 +145,8 @@ const RegisterFarmerDialog = () => {
               label="نوع کشت"
               product={true}
             />
+            </div>
+            <div className="col-md-4">
             <InputField
               type="text"
               label="منطقه"
@@ -132,8 +154,19 @@ const RegisterFarmerDialog = () => {
               onChange={handleChange}
               value={form.zone}
             />
-            <Button small>ویرایش</Button>
-          </Form>
+            </div>
+            <div className="col-md-4">
+            <InputField
+              type="text"
+              label="تاریخ تولد"
+              name="birthDate"
+              onChange={handleChange}
+              value={form.birthDate}
+            />
+            </div>
+            </div>
+            <Button small type='submit'>ثبت نام</Button>
+          </form>
         </ModalContent>
       </Modal>
     </Fragment>
@@ -160,9 +193,10 @@ const ModalContent = styled.div`
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
-  overflow-y: auto;
-  height: 500px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  overflow-y: hidden;
+  /* height: 500px; */
+
   @media (max-width: 850px) {
     width: 60%;
   }
@@ -192,6 +226,9 @@ const Title = styled.h4`
 
 const Form = styled.form`
   margin-top: 1rem;
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1rem;
 `;
 
 export default RegisterFarmerDialog;

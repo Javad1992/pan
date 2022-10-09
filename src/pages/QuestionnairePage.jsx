@@ -9,9 +9,9 @@ import { allProducts } from "../redux/action/general";
 
 const QuestionnairePage = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [product, setProduct] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [fullName, setFullName] = useState(null);
+  const [product, setProduct] = useState(null);
   let pageQuestionnaireList = [];
   const { role } = userData()?.data?.result?.employee;
   const dispatch = useDispatch();

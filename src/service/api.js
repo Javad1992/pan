@@ -125,6 +125,12 @@ export const getAllQuestionnaire = (
     }`
   );
 
+export const getMealPlan = (pageNumber, phoneNumber, fullName, product) =>
+    API.get(
+        // `/mealPlans?mode=1&pageNumber=${pageNumber}&phoneNumber=${phoneNumber}&fullName=${fullName}&product=${product}`
+        `/mealPlans?pageNumber=${pageNumber}&phoneNumber=${phoneNumber}&fullName=${fullName}&product=${product}`
+    );
+
 // get detail questionnaire
 export const getDetailQuestionnaire = (Qcode) =>
   API.get(`/questionnaire?Qcode=${Qcode}`);
@@ -156,11 +162,6 @@ export const uploadMealPlan = (mealPlanData, area) =>
 
 // get meal plan
 export const getMealPlanDetail = (mealPlanId) => API.get(`/mealPlan?mealPlanId=${mealPlanId}`);
-// get meal plan
-export const getMealPlan = (pageNumber, phoneNumber, fullName, product) =>
-  API.get(
-    `/mealPlans?mode=1&pageNumber=${pageNumber}&phoneNumber=${phoneNumber}&fullName=${fullName}&product=${product}`
-  );
 // get reject meal plan
 export const getRejectMealPlan = () => API.get(`/mealPlans?mode=rejected`);
 // reject description

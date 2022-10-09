@@ -38,8 +38,9 @@ body {
   display: flex;
   /* justify-content: space-between; */
 }
-p {
+p,label {
   margin: 0px;
+  line-height: 200%;
 }
 .paginate li {
   margin: 0 0.5rem;

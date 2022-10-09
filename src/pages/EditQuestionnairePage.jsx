@@ -17,7 +17,9 @@ const EditQuestionnairePage = () => {
 
   const questionnaireSelector = useSelector((state) => state?.questionnaire);
   const { allEditQuestionnaire } = questionnaireSelector;
+  console.log("AllQues", allEditQuestionnaire)
   pageQuestionnaireList = (allEditQuestionnaire?.slice( ( (10 * pageNumber) - 10 ) , ( (10 * pageNumber)) ));
+  console.log("PageQues", pageQuestionnaireList)
   const countPage = Math.ceil(
       questionnaireSelector?.count / 10
   );

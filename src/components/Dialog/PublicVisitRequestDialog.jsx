@@ -16,9 +16,9 @@ const PublicVisitRequestDialog = ({ visitId }) => {
   const [form, setForm] = useState({
     visitCode: "",
     province: "",
-    city: "",
+    city: "مشهد",
     zone: "",
-    transportaionCost: false,
+    transportationCost: false,
     product: "",
     area: "",
     distance: 0,
@@ -148,19 +148,21 @@ const PublicVisitRequestDialog = ({ visitId }) => {
 };
 
 const Modal = styled.div`
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  display: block; 
+  position: fixed;
+  overflow-y: scroll;
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
+  //background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 `;
 
 const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #fefefe;
   /* overflow-y: scroll; */
   border-radius: 5px;
@@ -197,6 +199,8 @@ const Title = styled.h4`
 `;
 
 const Form = styled.form`
+  display: flex;
+  flex-direction: column;
   margin-top: 1rem;
 `;
 

@@ -6,7 +6,7 @@ import { store } from "./redux/store/store";
 import { BrowserRouter } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <BrowserRouter>
