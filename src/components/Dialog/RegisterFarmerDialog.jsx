@@ -22,6 +22,7 @@ const RegisterFarmerDialog = () => {
     city: "",
     zone: "",
     birthDate:'',
+    avatarUrl:null,
     products: [],
   });
 

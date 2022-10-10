@@ -1,5 +1,3 @@
-import questionnairePage from "../../pages/QuestionnairePage";
-
 export const questionnaireReducer = (
   state = {
     questionnaires: [],
@@ -17,13 +15,13 @@ export const questionnaireReducer = (
     case "GET_ALL_QUESTIONNAIRES_DONE":
       return {
         ...state,
-        questionnaires: state.questionnaires.concat(action.payload.questionnaires),
+        questionnaires: state.questionnaires.length > 0 ? state.questionnaires.concat(action.payload.questionnaires.filter(item => !state.questionnaires.some(i => i.Qcode === item.Qcode))) : action.payload.questionnaires,
         count: action?.payload?.count
       };
     case "GET_ALL_MEALPLAN":
       return {
         ...state,
-        allEditQuestionnaire: state.allEditQuestionnaire.concat(action.payload.mealPlans),
+        allEditQuestionnaire: state.allEditQuestionnaire.length > 0 ? state.allEditQuestionnaire.concat(action.payload.mealPlans.filter(item => !state.allEditQuestionnaire.some(i => i.Qcode === item.Qcode))) : action.payload.mealPlans,
         count: action?.payload?.count
       };
 
@@ -130,6 +128,26 @@ export const questionnaireReducer = (
         ...state,
         isLoadingQuestionnaire: false,
       };
+    case "LOG_OUT":
+      return {
+        questionnaires: [],
+        count: 0,
+        archives: [],
+        mealDetail: {},
+        questionForm: [],
+        allRejectMealPlan: [],
+        allEditQuestionnaire: [],
+      };
+    case "SIGN_IN_DONE":
+      return {
+        questionnaires: [],
+        count: 0,
+        archives: [],
+        mealDetail: {},
+        questionForm: [],
+        allRejectMealPlan: [],
+        allEditQuestionnaire: [],
+      }
     default:
       return state;
   }

@@ -1,11 +1,9 @@
 import * as api from "../../service/api";
-import { logout } from "../../service/apiRequestInterface";
 // error and success message
 import { errorMessage, successMessage } from "../../utils/message";
 
 // validation user
 export const validationUser = (userData) => async (dispatch) => {
-  console.log("userData", userData);
   try {
     await api.singIn(userData);
     dispatch({ type: "VALIDATION_USER" });
@@ -29,6 +27,7 @@ export const singInUser = (userData, navigate) => async (dispatch) => {
     errorMessage(error.response.data?.data?.message);
   }
 };
+
 // logout
 export const logoutUser = (navigate) => async (dispatch) => {
   try {
